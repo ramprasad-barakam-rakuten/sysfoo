@@ -2,7 +2,6 @@ pipeline {
   agent {
     docker {
       image 'maven:3.6.3-jdk-11-slim'
-      args 'docker agent'
     }
 
   }
@@ -22,7 +21,6 @@ pipeline {
     stage('Package') {
       steps {
         sh 'mvn package -DskipTests'
-        archiveArtifacts 'target/*.war'
         archiveArtifacts 'target/*.war'
       }
     }
