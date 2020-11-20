@@ -1,6 +1,10 @@
 pipeline {
   agent {
-      docker { image 'maven:3.6.3-jdk-11-slim' } 
+    docker {
+      image 'maven:3.6.3-jdk-11-slim'
+      args 'docker agent'
+    }
+
   }
   stages {
     stage('Build') {
@@ -22,7 +26,7 @@ pipeline {
         archiveArtifacts 'target/*.war'
       }
     }
-    
+
     stage('Test') {
       steps {
         sh 'mvn -version'
