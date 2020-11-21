@@ -44,12 +44,7 @@ pipeline {
     }
 
     stage('Docker BnD') {
-      agent {
-        docker {
-          image 'none'
-        }
-
-      }
+      agent any
       steps {
         sh 'mvn -version'
         script {
