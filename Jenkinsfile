@@ -46,7 +46,7 @@ pipeline {
     stage('Docker BnD') {
       agent {
         docker {
-          image 'non'
+          image 'none'
         }
 
       }
